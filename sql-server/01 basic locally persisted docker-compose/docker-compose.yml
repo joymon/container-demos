@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    2019-CTP23-Mk1:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        ports:  
+          - "1433:1433"
+        environment:
+          SA_PASSWORD: "Password!"
+          ACCEPT_EULA: "Y"
+        volumes: 
+          - C:\temp\databases:/var/opt/mssql/data
+          #- /var/lib/docker/volumes/mssqluser/_data:/var/opt/sqlserver
+          #- /var/lib/docker/volumes/mssqlsystem/_data:/var/opt/mssql
